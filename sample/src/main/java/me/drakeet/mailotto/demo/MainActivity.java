@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
             if (textViewPreference.get() != null) {
                 textViewPreference.get().append(": done!");
             }
-            Mailbox.getInstance().post(new Mail("A mail from MainActivity", TargetActivity.class));
+
+            AwesomeMail mail = new AwesomeMail("This is a title", "I'm content");
+
+            Mailbox.getInstance().post(new Mail<>(mail, TargetActivity.class));
         }
     }
 }

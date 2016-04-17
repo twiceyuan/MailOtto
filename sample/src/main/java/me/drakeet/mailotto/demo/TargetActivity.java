@@ -2,10 +2,10 @@ package me.drakeet.mailotto.demo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import me.drakeet.mailotto.Mail;
+
 import me.drakeet.mailotto.Mailbox;
 import me.drakeet.mailotto.OnMailReceived;
 
@@ -27,8 +27,8 @@ public class TargetActivity extends AppCompatActivity {
     }
 
 
-    @OnMailReceived public void onPreloadDataReady(Mail mail) {
-        mTextView.setText(mail.content.toString());
+    @OnMailReceived public void onPreloadDataReady(AwesomeMail mail) {
+        mTextView.setText(String.format("title => %s\ncontent => %s", mail.title, mail.content));
     }
 
 

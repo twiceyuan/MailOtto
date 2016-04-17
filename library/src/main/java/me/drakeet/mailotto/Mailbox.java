@@ -181,7 +181,7 @@ public class Mailbox {
 
     protected void dispatch(Mail mail, MailHandler wrapper) {
         try {
-            wrapper.handleMail(mail);
+            wrapper.handleMail(mail.content);
         } catch (InvocationTargetException e) {
             throwRuntimeException(
                     "Could not dispatch mail: " + mail.getClass() + " to handler " + wrapper, e);

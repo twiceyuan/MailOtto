@@ -20,19 +20,19 @@ package me.drakeet.mailotto;
  * Created by drakeet(http://drakeet.me)
  * Date: 16/3/27 21:37
  */
-public class Mail {
+public class Mail<T> {
 
     public Class<?> from;
     public Class<?> to;
-    public Object content;
+    public T content;
 
 
-    public Mail(Object content, Class<?> to) {
+    public Mail(T content, Class<?> to) {
         this(content, to, null);
     }
 
 
-    public Mail(Object content, Class<?> to, Class<?> from) {
+    public Mail(T content, Class<?> to, Class<?> from) {
         this.to = to;
         this.from = from;
         this.content = content;
